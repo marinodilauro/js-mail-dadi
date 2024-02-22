@@ -7,14 +7,18 @@
 }
 
 :root {
-  --fzb-page_bg: rgb(250, 248, 239);
-  --fzb-app_bg: rgb(187, 173, 160);
-  --fzb-square_bg: rgb(238, 228, 218);
-  --fzb-fizz_bg: rgb(242, 177, 121);
-  --fzb-buzz_bg: rgb(245, 149, 99);
-  --fzb-fizzbuzz_bg: rgb(246, 124, 95);
-  --fzb-font_light: rgb(249, 245, 240);
-  --fzb-font_dark: rgb(117, 112, 104);
+  --md-primary: rgb(250, 248, 239);
+  --md-secondary: rgb(187, 173, 160);
+  --md-tertiary: rgb(238, 228, 218);
+  --md-accent_light: rgb(242, 177, 121);
+  --md-accent_dark: rgb(245, 149, 99);
+  --md-accent_darkest: rgb(246, 124, 95);
+  --md-font_light: rgb(249, 245, 240);
+  --md-font_dark: rgb(117, 112, 104);
+  --md-font_darkest: rgb(0, 0, 0);
+  --md-danger: rgb(2010, 0, 0);
+  --md-success: rgb(40, 170, 0);
+
 }
 
 
@@ -25,13 +29,32 @@
 
 body {
   font-family: "Fredoka", sans-serif;
-  background-color: var(--fzb-page_bg);
+  background-color: var(--md-primary);
 }
 
 h1 {
   font-size: 4rem;
   font-weight: bold;
-  color: var(--fzb-font_dark);
+  color: var(--md-font_dark);
+}
+
+.mc_access_denied {
+  color: var(--md-danger);
+}
+
+.mc_access_granted {
+  color: var(--md-success);
+}
+
+.mc_btn {
+  background-color: var(--md-accent_dark);
+  border-color: var(--md-accent_dark);
+
+}
+
+.mc_btn:hover {
+  background-color: var(--md-accent_darkest);
+  border-color: var(--md-accent_dark);
 }
 
 /* #endregion ||||| COMMON RULES ||||| */

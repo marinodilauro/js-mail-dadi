@@ -33,32 +33,46 @@ submitButtonElement.addEventListener("click", function (e) {
 
   userEmail = inputEmailElement.value;
 
-  // Creo un ciclo for per controllare i dati all'interno della lista
+  // Verifico se l'input è compilato e se è un indirizzo email valido
 
-  for (let i = 0; i < emailList.length; i++) {
-    const email = emailList[i];
+  if (!userEmail) {
 
-    if (userEmail === email) {
-      hasAccess = true;
-    }
+    alert("❗Tutti i campi sono obbligatori❗");
 
-  };
+  } else if (userEmail.search("@") === -1) {
 
-  // Stampa il risultato in console
-
-  const loginOutputElement = document.querySelector(".mc_login_output");
-
-  if (hasAccess === true) {
-
-    //console.log(`Ciao ${userEmail.split("@")[0]}, bentornato/a!`)
-    loginOutputElement.innerHTML = `<div>Ciao ${userEmail.split("@")[0]}, bentornato/a!</div>`;
+    alert("❗Inserire un indirizzo email valido❗");
 
   } else {
 
-    // console.log(`Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!`)
-    loginOutputElement.innerHTML = `Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!`;
+    // Creo un ciclo for per controllare i dati all'interno della lista
 
-  };
+    for (let i = 0; i < emailList.length; i++) {
+      const email = emailList[i];
+
+      if (userEmail === email) {
+        hasAccess = true;
+      }
+
+    };
+
+    // Stampa il risultato in console
+
+    const loginOutputElement = document.querySelector(".mc_login_output");
+
+    if (hasAccess === true) {
+
+      loginOutputElement.innerHTML = `<div class="mc_access_granted">Ciao ${userEmail.split("@")[0]}, bentornato/a!</div>`;
+
+    } else {
+
+      loginOutputElement.innerHTML = `<div class="mc_access_denied">Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!</div>`;
+
+    };
+
+  }
+
+
 
   hasAccess = false;
 
