@@ -1,3 +1,5 @@
+////////// #region USER ACCESS //////////
+
 // Creo una lista con le email che hanno accesso
 
 const emailList = [
@@ -40,4 +42,17 @@ if (hasAccess === true) {
   console.log(`Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!`)
 }
 
+////////// #endregion USER ACCESS //////////
 
+
+////////// #region DICE GAME //////////
+
+// Creo due variabili che avranno come valore un numero generato randomicamente fra 1 e 6
+
+const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+const userNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+
+console.log(cpuNumber, userNumber);
+
+
+////////// #endregion DICE GAME //////////
