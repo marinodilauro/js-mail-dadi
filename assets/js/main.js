@@ -32,6 +32,12 @@ for (let i = 0; i < emailList.length; i++) {
 
 }
 
+// Stampa il risultato in console
 
+if (hasAccess === true) {
+  console.log(`Ciao ${userEmail.split("@")[0]}, bentornato/a!`)
+} else {
+  console.log(`Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!`)
+}
 
 
