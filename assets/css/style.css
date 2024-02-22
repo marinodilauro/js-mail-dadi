@@ -77,6 +77,8 @@ h1 {
 
   .mc_number {
     font-size: 4rem;
+    font-weight: bold;
+    color: var(--md-font_dark);
   }
 
   .mc_win,

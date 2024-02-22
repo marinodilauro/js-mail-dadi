@@ -94,15 +94,15 @@ playBtnElement.addEventListener("click", function () {
 
   numbersElement.innerHTML =
     `
-  <div class="fs-1">Your number:
-    <div class="mc_number">${userNumber}</div>
+  <div class="mc_number fs-1">Your number:
+    <div class="mc_number" style="color: var(--md-font_darkest)">${userNumber}</div>
   </div>
   `;
 
   numbersElement.innerHTML +=
     `
-  <div class="fs-1">CPU number:
-    <div class="mc_number">${cpuNumber}</div>
+  <div class="mc_number fs-1">CPU number:
+    <div class="mc_number" style="color: var(--md-font_darkest)">${cpuNumber}</div>
   </div>
   `;
 
