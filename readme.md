@@ -6,6 +6,7 @@ Chiedi all’utente la sua email, controlla che sia nella lista di chi può acce
 ### Steps
 
 - Creo una lista con le email che hanno accesso
+- Creo una variabile con l'email dell'utente
 - Creo una variabile booleana per verificare se l'utente ha accesso
 - Creo un ciclo for per controllare i dati all'interno della lista
   - Verifico se l'email inserita dall'utente è presente nella lista
