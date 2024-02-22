@@ -1,0 +1,37 @@
+/* #region ||||| UTILITIES ||||| */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fzb-page_bg: rgb(250, 248, 239);
+  --fzb-app_bg: rgb(187, 173, 160);
+  --fzb-square_bg: rgb(238, 228, 218);
+  --fzb-fizz_bg: rgb(242, 177, 121);
+  --fzb-buzz_bg: rgb(245, 149, 99);
+  --fzb-fizzbuzz_bg: rgb(246, 124, 95);
+  --fzb-font_light: rgb(249, 245, 240);
+  --fzb-font_dark: rgb(117, 112, 104);
+}
+
+
+/* #endregion ||||| UTILITIES ||||| */
+
+
+/* #region ||||| COMMON RULES ||||| */
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background-color: var(--fzb-page_bg);
+}
+
+h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--fzb-font_dark);
+}
+
+/* #endregion ||||| COMMON RULES ||||| */
