@@ -54,6 +54,15 @@ h1 {
   border-color: var(--md-accent_dark);
 }
 
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  background-color: var(--md-accent_light);
+  border-color: var(--md-accent_light);
+}
+
 /* #endregion ||||| COMMON RULES ||||| */
 
 
