@@ -32,11 +32,32 @@ body {
   background-color: var(--md-primary);
 }
 
-h1 {
-  font-size: 4rem;
+h1,
+h2,
+h3 {
   font-weight: bold;
   color: var(--md-font_dark);
 }
+
+h1 {
+  font-size: 4rem;
+}
+
+
+.mc_btn {
+  background-color: var(--md-accent_dark);
+  border-color: var(--md-accent_dark);
+}
+
+.mc_btn:hover {
+  background-color: var(--md-accent_darkest);
+  border-color: var(--md-accent_dark);
+}
+
+/* #endregion ||||| COMMON RULES ||||| */
+
+
+/* #region ||||| LOGIN ||||| */
 
 .mc_access_denied {
   color: var(--md-danger);
@@ -46,15 +67,38 @@ h1 {
   color: var(--md-success);
 }
 
-.mc_btn {
-  background-color: var(--md-accent_dark);
-  border-color: var(--md-accent_dark);
+/* #endregion ||||| LOGIN ||||| */
+
+
+/* #endregion ||||| DICE GAME ||||| */
+
+.mc_dice_game {
+  background-color: var(--md-tertiary);
+
+  .mc_number {
+    font-size: 4rem;
+  }
+
+  .mc_win,
+  .mc_draw,
+  .mc_lose {
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+
+  .mc_win {
+    color: var(--md-success)
+  }
+
+  .mc_draw {
+    color: var(--md-accent_darkest);
+  }
+
+  .mc_lose {
+    color: var(--md-danger);
+  }
+
 
 }
 
-.mc_btn:hover {
-  background-color: var(--md-accent_darkest);
-  border-color: var(--md-accent_dark);
-}
-
-/* #endregion ||||| COMMON RULES ||||| */
+/* #endregion ||||| DICE GAME ||||| */

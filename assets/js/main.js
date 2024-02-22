@@ -1,4 +1,4 @@
-////////// #region USER ACCESS //////////
+// #region ||||| USER ACCESS |||||
 
 // Creo una lista con le email che hanno accesso
 
@@ -24,81 +24,104 @@ let userEmail = inputEmailElement.value;
 
 let hasAccess = false;
 
+const formElement = document.querySelector(".mc_login_form");
 
-const submitButtonElement = document.getElementById("submitBtn");
-
-submitButtonElement.addEventListener("click", function (e) {
+formElement.addEventListener("submit", function (e) {
 
   e.preventDefault();
 
   userEmail = inputEmailElement.value;
 
-  // Verifico se l'input è compilato e se è un indirizzo email valido
+  /* // Verifico se l'input è compilato e se è un indirizzo email valido
+  
+    if (!userEmail) {
+  
+      alert("❗Tutti i campi sono obbligatori❗");
+  
+    } else if (userEmail.search("@") === -1) {
+  
+      alert("❗Inserire un indirizzo email valido❗");
+  
+    } else { }*/
 
-  if (!userEmail) {
+  // Creo un ciclo for per controllare i dati all'interno della lista
 
-    alert("❗Tutti i campi sono obbligatori❗");
+  for (let i = 0; i < emailList.length; i++) {
+    const email = emailList[i];
 
-  } else if (userEmail.search("@") === -1) {
+    if (userEmail === email) {
+      hasAccess = true;
+    }
 
-    alert("❗Inserire un indirizzo email valido❗");
+  };
+
+  // Stampa il risultato in console
+
+  const loginElement = document.querySelector(".mc_login_output");
+
+  if (hasAccess === true) {
+
+    loginElement.innerHTML = `<div class="mc_access_granted">Ciao ${userEmail.split("@")[0]}, bentornato/a!</div>`;
 
   } else {
 
-    // Creo un ciclo for per controllare i dati all'interno della lista
+    loginElement.innerHTML = `<div class="mc_access_denied">Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!</div>`;
 
-    for (let i = 0; i < emailList.length; i++) {
-      const email = emailList[i];
-
-      if (userEmail === email) {
-        hasAccess = true;
-      }
-
-    };
-
-    // Stampa il risultato in console
-
-    const loginOutputElement = document.querySelector(".mc_login_output");
-
-    if (hasAccess === true) {
-
-      loginOutputElement.innerHTML = `<div class="mc_access_granted">Ciao ${userEmail.split("@")[0]}, bentornato/a!</div>`;
-
-    } else {
-
-      loginOutputElement.innerHTML = `<div class="mc_access_denied">Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!</div>`;
-
-    };
-
-  }
-
-
+  };
 
   hasAccess = false;
 
 });
 
+// #endregion ||||| USER ACCESS |||||
 
 
-////////// #endregion USER ACCESS //////////
-
-
-////////// #region DICE GAME //////////
+// #region ||||| DICE GAME |||||
 
 // Creo due variabili che avranno come valore un numero generato randomicamente fra 1 e 6
 
-const userNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+const playBtnElement = document.getElementById("playBtn");
 
-console.log(userNumber, cpuNumber);
+playBtnElement.addEventListener("click", function () {
 
+  const userNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
-// Verifico quale dei due valori è maggiore e stampo il risultato
+  console.log(userNumber, cpuNumber);
 
-if (userNumber > cpuNumber) {
-  console.log("You win!");
-} else {
-  console.log("You lose!");
-};
+  const gameResultsElement = document.querySelector(".mc_game_results");
+  const numbersElement = document.querySelector(".mc_numbers");
 
-////////// #endregion DICE GAME //////////
+  numbersElement.innerHTML =
+    `
+  <div class="fs-1">Your number:
+    <div class="mc_number">${userNumber}</div>
+  </div>
+  `;
+
+  numbersElement.innerHTML +=
+    `
+  <div class="fs-1">CPU number:
+    <div class="mc_number">${cpuNumber}</div>
+  </div>
+  `;
+
+  // Verifico quale dei due valori è maggiore e stampo il risultato
+
+  if (userNumber > cpuNumber) {
+
+    //console.log("You win!");
+    gameResultsElement.innerHTML = `<div class="mc_win">🎉You won! Congratulations!🎉</div>`;
+
+  } else if (userNumber === cpuNumber) {
+
+    gameResultsElement.innerHTML = `<div class="mc_draw">😯WOW! That's a draw!😯</div>`;
+
+  } else {
+
+    //console.log("You lose!");
+    gameResultsElement.innerHTML = `<div class="mc_lose">😩You lose! Better luck next time!😩</div>`;
+
+  };
+});
+// #endregion ||||| DICE GAME |||||
