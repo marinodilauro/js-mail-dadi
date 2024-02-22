@@ -32,7 +32,7 @@ for (let i = 0; i < emailList.length; i++) {
     hasAccess = true;
   }
 
-}
+};
 
 // Stampa il risultato in console
 
@@ -40,7 +40,7 @@ if (hasAccess === true) {
   console.log(`Ciao ${userEmail.split("@")[0]}, bentornato/a!`)
 } else {
   console.log(`Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!`)
-}
+};
 
 ////////// #endregion USER ACCESS //////////
 
@@ -49,10 +49,18 @@ if (hasAccess === true) {
 
 // Creo due variabili che avranno come valore un numero generato randomicamente fra 1 e 6
 
-const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 const userNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 
-console.log(cpuNumber, userNumber);
+console.log(userNumber, cpuNumber);
 
+
+// Verifico quale dei due valori è maggiore
+
+if (userNumber > cpuNumber) {
+  console.log("You win!");
+} else {
+  console.log("You lose!");
+};
 
 ////////// #endregion DICE GAME //////////
