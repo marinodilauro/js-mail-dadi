@@ -4,7 +4,7 @@
 
 const emailList = [
   "marino@yahoo.it",
-  "jimmyo@hotmail.com",
+  "jimmy@hotmail.com",
   "andrea@outlook.it",
   "simona@virgilio.it",
   "chiara@virgilio.it",
@@ -20,11 +20,32 @@ const inputEmailElement = document.getElementById("inputEmail");
 let userEmail = inputEmailElement.value;
 
 
+// Aiuto email a schermo
+
+const helpLinkElement = document.getElementById("help");
+
+
+helpLinkElement.addEventListener("click", function (e) {
+
+  e.preventDefault();
+
+  helpLinkElement.insertAdjacentHTML("afterend",
+    `<div class="rounded mc_help">
+      Prova questa email: ${emailList[Math.floor(Math.random() * (emailList.length - 1))]}
+    </div>`
+  );
+
+});
+
+
 // Creo una variabile booleana per verificare se l'utente ha accesso
 
 let hasAccess = false;
 
 const formElement = document.querySelector(".mc_login_form");
+
+
+// Input utente
 
 formElement.addEventListener("submit", function (e) {
 
@@ -68,6 +89,9 @@ formElement.addEventListener("submit", function (e) {
     loginElement.innerHTML = `<div class="mc_access_denied">Spiacente ${userEmail.split("@")[0]}, la tua email non è presente in archivio!</div>`;
 
   };
+
+  const helpBannerElement = document.querySelector(".mc_help");
+  helpBannerElement.remove();
 
   hasAccess = false;
 

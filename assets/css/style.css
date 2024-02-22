@@ -68,6 +68,12 @@ h1 {
 
 /* #region ||||| LOGIN ||||| */
 
+.mc_help {
+  background-color: var(--md-secondary);
+  border-color: var(--md-font_darkest);
+  padding: 1rem
+}
+
 .mc_access_denied {
   color: var(--md-danger);
 }
