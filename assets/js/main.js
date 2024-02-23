@@ -108,8 +108,8 @@ const playBtnElement = document.getElementById("playBtn");
 
 playBtnElement.addEventListener("click", function () {
 
-  const userNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-  const cpuNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+  const userNumber = Math.floor(Math.random() * 6) + 1;
+  const cpuNumber = Math.floor(Math.random() * 6) + 1;
 
   console.log(userNumber, cpuNumber);
 
